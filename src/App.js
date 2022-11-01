@@ -1,11 +1,8 @@
-import React, { useState, useEffect } from "react";
-
+import React, { useState } from "react";
 
 function App() {
 	//================================================================================================================================
-	return(
-		<p>Hi react</p>
-	);
+	return <div className="wrapper"> </div>;
 }
 
 export default App;
