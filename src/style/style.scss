@@ -43,11 +43,38 @@ h1 {
 }
 /* //============================================================================================================================ */
 
-
 /* //============================================================================================================================ */
 body {
 	font-family: "Montserrat";
 }
 
 /* //============================================================================================================================ */
+.incdec {
+	padding: 30px;
+}
+.incdec__result {
+	font-size: 20px;
+	font-weight: 600;
+	margin: 0px 0px 25px 0px;
+}
+.incdec__buttons {
+	display: flex;
+	gap: 15px;
+}
 
+.button {
+	font-size: 20px;
+	font-family: "Montserrat";
+	line-height: 120%;
+	display: flex;
+	align-items: center;
+	font-weight: 500;
+	justify-content: center;
+	border-radius: 25px;
+	border: 1px solid rgb(113, 200, 208);
+	padding: 8px 15px;
+	transition: all 0.3s ease 0s;
+}
+.button:hover {
+	box-shadow: 0 0 5px rgb(113, 200, 208), 0 0 15px rgb(113, 200, 208);
+}
