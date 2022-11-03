@@ -18,13 +18,14 @@ export default function HangmanWord({
 			}}
 		>
 			{wordToguess.split("").map((letter, index) => (
-				<span key={index} style={{ borderBottom: "5px solid black" }}>
+				<span
+					key={index}
+					style={{ borderBottom: "5px solid black", fontFamily: "monospace" }}
+				>
 					<span
 						style={{
 							visibility:
-								guessedLetters.includes(letter) || reveal
-									? ""
-									: "hidden",
+								guessedLetters.includes(letter) || reveal ? "" : "hidden",
 							color:
 								!guessedLetters.includes(letter) && reveal ? "#e63946" : "",
 						}}

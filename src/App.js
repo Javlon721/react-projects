@@ -58,44 +58,34 @@ function App() {
 		};
 
 		document.addEventListener("keypress", handler);
-	},[]);
+	}, []);
 	return (
 		<div className="wrapper">
 			<h1 className="title">Hello to the HangMan Game</h1>
-			<div
-				style={{
-					display: "flex",
-					alignItems: "center",
-					flexDirection: "column",
-					maxWidth: "800px",
-					margin: "0 auto",
-				}}
-			>
-				<div
-					style={{
-						marginBottom: "30px",
-						fontSize: "30px",
-					}}
-				>
+			<div className="hangman">
+				<div className="hangman__title">
 					{isWinner && "Winner! Refresh to try again"}
 					{isLoser && "Nice try! Refresh to try again"}
 				</div>
-
-				<HangManDrawing numberOfGuesses={inCorrectLetters.length} />
-				<HangmanWord
-					guessedLetters={guessedLetters}
-					wordToguess={wordToGuess}
-					reveal={isLoser}
-				/>
-				<div style={{ alignSelf: "stretch" }}>
-					<HangmanKeyBoard
-						addGuessedLetter={addGuessedLetter}
-						activeLetter={guessedLetters.filter((letter) =>
-							wordToGuess.includes(letter)
-						)}
-						inActiveLetter={inCorrectLetters}
-						disabled={isWinner || isLoser}
-					/>
+				<div className="hangman__body">
+					<div className="hangman__img">
+						<HangManDrawing numberOfGuesses={inCorrectLetters.length} />
+					</div>
+					<div className="hangman__board">
+						<HangmanWord
+							guessedLetters={guessedLetters}
+							wordToguess={wordToGuess}
+							reveal={isLoser}
+						/>
+						<HangmanKeyBoard
+							addGuessedLetter={addGuessedLetter}
+							activeLetter={guessedLetters.filter((letter) =>
+								wordToGuess.includes(letter)
+							)}
+							inActiveLetter={inCorrectLetters}
+							disabled={isWinner || isLoser}
+						/>
+					</div>
 				</div>
 			</div>
 		</div>
