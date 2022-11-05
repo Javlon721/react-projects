@@ -22,6 +22,7 @@ function App() {
 	const isWinner = wordToGuess
 		.split("")
 		.every((letter) => guessedLetters.includes(letter));
+
 	const addGuessedLetter = useCallback(
 		(letter) => {
 			if (guessedLetters.includes(letter) || isLoser || isWinner) return;
@@ -61,23 +62,30 @@ function App() {
 
 		document.addEventListener("keypress", handler);
 	}, []);
+
+	useEffect(() => {
+		isWinner || isLoser ? setOpen(true) : setOpen(false);
+	}, [isWinner, isLoser]);
+
 	return (
 		<div className="wrapper">
 			<h1 className="title">Hello to the HangMan Game</h1>
 			<div className="hangman">
 				<div className="hangman__title">
-					{isWinner && (
-						<Modal open={open} setopen={setOpen}>
-							<h2 className="modal__title">"Winner! Refresh to try again</h2>
-							<div className="modal__close-btn"></div>
-						</Modal>
-					)}
-					{isLoser && (
-						<Modal open={open} setopen={setOpen}>
-							<h2 className="modal__title">Nice try! Refresh to try again</h2>
-							<div className="modal__close-btn"></div>
-						</Modal>
-					)}
+					<Modal
+						open={open}
+						setOpen={setOpen}
+						isWinner={isWinner}
+						isLoser={isLoser}
+						setGuessedLetters={setGuessedLetters}
+						setWordTOGuess={setWordTOGuess}
+						getWord={getWord}
+					>
+						<h2 className="modal__title">
+							{isWinner && "Winner! Refresh to try again"}
+							{isLoser && "Nice try! Refresh to try again"}
+						</h2>
+					</Modal>
 				</div>
 				<div className="hangman__body">
 					<div className="hangman__img">

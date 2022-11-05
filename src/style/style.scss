@@ -123,13 +123,91 @@ body {
 
 //========================================================================================================================================================
 .modal {
+	background-color: #fefae0;
+	padding: 15px;
+	width: 500px;
+	z-index: 50;
+	height: 400px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	color: #264653;
+	font-weight: 600;
+	text-align: center;
+	border-radius: 12px;
+	position: fixed;
+	top: 25%;
+	left: 25%;
+
+	font-size: 30px;
+	opacity: 0;
+	transform: scale(2);
+	visibility: hidden;
+	transition: all 0.5s cubic-bezier(0.68, -0.6, 0.32, 1.6) 0s;
+	&.show {
+		opacity: 1;
+		transform: scale(1);
+		visibility: visible;
+	}
 	// .modal__title
 
 	&__title {
+		font-weight: 600;
+		margin-bottom: 15px;
 	}
-
+	p{
+		color: #5e548e;
+	}
 	// .modal__close-btn
 
 	&__close-btn {
+		position: absolute;
+		top: 15px;
+		cursor: pointer;
+		right: 15px;
+		width: 20px;
+		height: 20px;
+		&::before,
+		&::after {
+			content: "";
+			display: block;
+			position: absolute;
+			width: 20px;
+			height: 2px;
+			background-color: #457b9d;
+		}
+		&::before {
+			transform: rotate(45deg);
+			top: 50%;
+		}
+		&::after {
+			transform: rotate(-45deg);
+			top: 50%;
+		}
+	}
+	// .modal__close-btn
+
+	&__restart-btn {
+		cursor: pointer;
+		margin-top: 25px;
+
+		padding: 8px 15px;
+		border-radius: 25px;
+		border: 2px solid #2a9d8f;
+		transition: all 0.2s linear 0s;
+		box-shadow: 0 5px #1f746a;
+		transform: translateY(0);
+		@media (any-hover: hover) {
+			&:hover {
+				color: #edf2f4;
+
+				background-color: #2a9d8f;
+			}
+		}
+		&:active {
+			transform: translateY(3px);
+			box-shadow: 0 2px #1f746a;
+		}
 	}
 }
