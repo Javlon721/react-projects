@@ -1,0 +1,57 @@
+[
+	{
+		"title": "I understand that you've sent him an e-mail        message. I think you ............... him instead.",
+		"variants": [
+			"ought to have phoned",
+			"should phone",
+			"couldn't have phoned",
+			"had phoned",
+			"left"
+		],
+		"answer": "ought to have phoned"
+	},
+	{
+		"title": "I promise that I will be here when you come back, but I'm afraid everyone else .............. by then.",
+		"variants": [
+			"were leaving",
+			"leave",
+			"are leaving",
+			"will have left",
+			"left "
+		],
+		"answer": "will have left"
+	},
+	{
+		"title": "Do you have any idea what she .............. at this time tomorrow?",
+		"variants": [
+			"has done",
+			"will be doing",
+			"was doing",
+			"is doing",
+			"has been doing"
+		],
+		"answer": "will be doing"
+	},
+	{
+		"title": "You ............... when I ............... on you that early, ............... you?",
+		"variants": [
+			"won't be sleeping / call / will",
+			"were sleeping / had called / hadn't",
+			"are sleeping / am calling / weren't",
+			"have slept / have called / haven't",
+			"didn't sleep / have called / did "
+		],
+		"answer": "won't be sleeping / call / will"
+	},
+	{
+		"title": "They ............. each other for a long time before they finally decided to get married.",
+		"variants": [
+			"have known",
+			"had been knowing",
+			"were knowing",
+			"had known",
+			"have been knowing"
+		],
+		"answer": "had known"
+	}
+]
