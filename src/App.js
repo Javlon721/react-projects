@@ -4,6 +4,7 @@ import words from "./words.json";
 import HangManDrawing from "./Components/HangManDrawing.js";
 import HangmanKeyBoard from "./Components/HangmanKeyBoard.js";
 import HangmanWord from "./Components/HangmanWord.js";
+import Modal from "./Components/Modal";
 
 function getWord() {
 	return words[Math.floor(Math.random() * words.length)];
@@ -12,6 +13,7 @@ function getWord() {
 function App() {
 	const [wordToGuess, setWordTOGuess] = useState(getWord);
 	const [guessedLetters, setGuessedLetters] = useState([]);
+	const [open, setOpen] = useState(false);
 
 	const inCorrectLetters = guessedLetters.filter(
 		(letter) => !wordToGuess.includes(letter)
@@ -64,8 +66,18 @@ function App() {
 			<h1 className="title">Hello to the HangMan Game</h1>
 			<div className="hangman">
 				<div className="hangman__title">
-					{isWinner && "Winner! Refresh to try again"}
-					{isLoser && "Nice try! Refresh to try again"}
+					{isWinner && (
+						<Modal open={open} setopen={setOpen}>
+							<h2 className="modal__title">"Winner! Refresh to try again</h2>
+							<div className="modal__close-btn"></div>
+						</Modal>
+					)}
+					{isLoser && (
+						<Modal open={open} setopen={setOpen}>
+							<h2 className="modal__title">Nice try! Refresh to try again</h2>
+							<div className="modal__close-btn"></div>
+						</Modal>
+					)}
 				</div>
 				<div className="hangman__body">
 					<div className="hangman__img">
