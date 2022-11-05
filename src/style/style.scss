@@ -53,6 +53,7 @@ body {
 	// align-items: center;
 	padding: 30px;
 	overflow: hidden;
+	
 }
 /* //============================================================================================================================ */
 
@@ -136,18 +137,18 @@ body {
 	font-weight: 600;
 	text-align: center;
 	border-radius: 12px;
-	position: fixed;
-	top: 25%;
-	left: 25%;
-
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%) scale(2);
 	font-size: 30px;
 	opacity: 0;
-	transform: scale(2);
+
 	visibility: hidden;
 	transition: all 0.5s cubic-bezier(0.68, -0.6, 0.32, 1.6) 0s;
 	&.show {
 		opacity: 1;
-		transform: scale(1);
+		transform: translate(-50%, -50%) scale(1);
 		visibility: visible;
 	}
 	// .modal__title
@@ -156,7 +157,7 @@ body {
 		font-weight: 600;
 		margin-bottom: 15px;
 	}
-	p{
+	p {
 		color: #5e548e;
 	}
 	// .modal__close-btn
