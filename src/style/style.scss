@@ -53,8 +53,6 @@ body {
 	align-items: center;
 	justify-content: center;
 	padding: 30px;
-	width: 100vh;
-	height: 100vh;
 }
 
 /* //============================================================================================================================ */
@@ -66,3 +64,98 @@ body {
 	margin: 0px 0px 20px 0px;
 }
 //============================================================================================================================
+.quiz {
+	background-color: #83c5bfc5;
+	border-radius: 30px;
+	padding: 30px;
+	color: #0d1b2a;
+	max-width: 700px;
+	// .quiz__progress-bar
+
+	&__progress-bar {
+		transition: all 0.3s ease 0s;
+		height: 10px;
+		border-radius: 60px;
+		background-color: #274c77;
+		margin-bottom: 10px;
+	}
+
+	// .quiz__title
+
+	&__title {
+		font-size: 26px;
+		font-weight: 700;
+		margin-bottom: 15px;
+	}
+
+	// .quiz__list
+
+	&__list {
+		padding-left: 8px;
+		> *:not(:last-child) {
+			margin-bottom: 10px;
+		}
+	}
+	// .quiz__item
+
+	&__item {
+		font-size: 20px;
+		font-weight: 600;
+		cursor: pointer;
+		border: 2px solid #231842;
+		padding: 9px 15px;
+		border-radius: 10px;
+		transition: all 0.25s linear 0s;
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: #f1faee;
+				color: #001d3d;
+			}
+		}
+		&:active {
+			background-color: #a8dadc;
+		}
+	}
+}
+
+.results {
+	width: 500px;
+
+	font-weight: 700;
+	height: 200px;
+	border-radius: 30px;
+	background-color: #edf2fb;
+	border: 2px solid #4d194d;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	// .results__title
+
+	&__title {
+		font-size: 30px;
+		margin-bottom: 30px;
+	}
+
+	&__reload {
+		text-decoration: none;
+		color: inherit;
+		font-size: 20px;
+		border: 1px solid black;
+		padding: 8px 15px;
+		border-radius: 10px;
+		box-shadow: 0 5px #001845;
+		transform: translateY(0);
+		transition: all 0.3s ease 0s;
+		@media (any-hover: hover) {
+			&:hover {
+				transform: translateY(3px);
+				box-shadow: 0 2px #001845;
+			}
+		}
+	}
+}
+
+//========================================================================================================================================================
+.fisrt-type {
+}
