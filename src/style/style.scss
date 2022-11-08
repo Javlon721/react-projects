@@ -159,3 +159,26 @@ body {
 //========================================================================================================================================================
 .fisrt-type {
 }
+
+.second-type {
+	margin-top: 35px;
+	// .second-type__tabs
+
+	&__tabs {
+		display: flex;
+		align-items: center;
+		gap: 5px;
+	}
+
+	// .second-type__tab
+
+	&__tab {
+		cursor: pointer;
+		font-size: 24px;
+		font-weight: 600;
+		padding: 15px;
+		border-radius: 15px;
+		border: 2px solid #a8dadc;
+		
+	}
+}
