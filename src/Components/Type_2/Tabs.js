@@ -5,7 +5,7 @@ export default function Tabs({ lenght }) {
 
 	return tabsArr.map((item, index) => {
 		return (
-			<li key={index} className="second-type__tab">
+			<li  key={index} className="second-type__tab">
 				{index + 1}
 			</li>
 		);

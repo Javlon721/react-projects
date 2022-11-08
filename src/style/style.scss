@@ -161,12 +161,13 @@ body {
 }
 
 .second-type {
+	align-self: stretch;
 	margin-top: 35px;
 	// .second-type__tabs
 
 	&__tabs {
-		display: flex;
-		align-items: center;
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(60px, 80px));
 		gap: 5px;
 	}
 
@@ -175,10 +176,12 @@ body {
 	&__tab {
 		cursor: pointer;
 		font-size: 24px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 		font-weight: 600;
-		padding: 15px;
-		border-radius: 15px;
+		padding: 3px 24px;
+		border-radius: 12px;
 		border: 2px solid #a8dadc;
-		
 	}
 }
