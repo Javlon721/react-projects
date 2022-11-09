@@ -57,7 +57,8 @@ function App() {
 	const [correct2, setCorrect2] = useState(0);
 	const [active, setActive] = useState(obj);
 	const [busy, setBusy] = useState({});
-	console.log(busy);
+	const [hide, setHide] = useState(false);
+
 	//========================================================================================================================================================
 
 	const quizLength = quizes.length;
@@ -84,25 +85,47 @@ function App() {
 			</div>
 			<div className="second-type">
 				<ul className="second-type__tabs">
-					<Tabs
-						lenght={quizLength}
-						setQuiz2={setQuiz2}
-						isActive={active[quiz2]}
-						busy={busy}
-					/>
+					{!hide ? (
+						<Tabs
+							lenght={quizLength}
+							setQuiz2={setQuiz2}
+							isActive={active[quiz2]}
+							busy={busy}
+						/>
+					) : (
+						""
+					)}
 				</ul>
 				<div className="second-type__quizes">
-					<Quiz2
-						count={quiz2}
-						quiz={quizes[quiz2]}
-						setQuiz2={setQuiz2}
-						setCorrect={setCorrect2}
-						lengthOf={quizLength}
-						active={active}
-						setActive={setActive}
-						setBusy={setBusy}
-					/>
+					{!hide ? (
+						<Quiz2
+							count={quiz2}
+							quiz={quizes[quiz2]}
+							setQuiz2={setQuiz2}
+							setCorrect={setCorrect2}
+							lengthOf={quizLength}
+							active={active}
+							setActive={setActive}
+							setBusy={setBusy}
+						/>
+					) : (
+						`Your score ${`${correct2} / ${quizLength}`}`
+					)}
 				</div>
+				{!hide ? (
+					<a
+						href="/"
+						onClick={(e) => {
+							e.preventDefault();
+							setHide(true);
+						}}
+						className="second-type__submit"
+					>
+						submit
+					</a>
+				) : (
+					""
+				)}
 			</div>
 		</div>
 	);

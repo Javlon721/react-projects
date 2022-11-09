@@ -165,6 +165,8 @@ body {
 }
 
 .second-type {
+	display: flex;
+	flex-direction: column;
 	// align-self: stretch;
 	margin-top: 35px;
 	// .second-type__tabs
@@ -190,6 +192,32 @@ body {
 		border: 2px solid #a8dadc;
 		&.active {
 			background-color: #ff9900;
+		}
+	}
+
+	// .second-type__submit
+
+	&__submit {
+		align-self: end;
+		text-decoration: none;
+		font-size: 20px;
+		padding: 15px;
+		border-radius: 12px;
+		text-transform: uppercase;
+		margin-top: 15px;
+		background-color: #212529;
+		color: #f8f9fa;
+		box-shadow: 2px 5px #adb5bd;
+		transform: translate(0, 0);
+		transition: all 0.3s cubic-bezier(0.36, 0, 0.66, -0.56) 0s;
+		@media (any-hover: hover) {
+			&:hover {
+				box-shadow: 0px 2px #adb5bd;
+				transform: translate(2px, 3px);
+			}
+		}
+		&:active {
+			color: inherit;
 		}
 	}
 }
