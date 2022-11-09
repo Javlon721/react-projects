@@ -70,6 +70,7 @@ body {
 	padding: 30px;
 	color: #0d1b2a;
 	max-width: 700px;
+	// min-height: 300px;
 	// .quiz__progress-bar
 
 	&__progress-bar {
@@ -114,6 +115,9 @@ body {
 		}
 		&:active {
 			background-color: #a8dadc;
+		}
+		&.active {
+			background-color: #e9d8a6;
 		}
 	}
 }
@@ -161,7 +165,7 @@ body {
 }
 
 .second-type {
-	align-self: stretch;
+	// align-self: stretch;
 	margin-top: 35px;
 	// .second-type__tabs
 
@@ -169,6 +173,7 @@ body {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(60px, 80px));
 		gap: 5px;
+		margin-bottom: 15px;
 	}
 
 	// .second-type__tab
@@ -183,5 +188,8 @@ body {
 		padding: 3px 24px;
 		border-radius: 12px;
 		border: 2px solid #a8dadc;
+		&.active {
+			background-color: #ff9900;
+		}
 	}
 }

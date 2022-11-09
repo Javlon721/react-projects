@@ -1,12 +1,16 @@
 import React from "react";
 
-export default function Quiz({ count, quiz, setQuiz, setCorrect, length }) {
+export default function Quiz({
+	count,
+	quiz,
+	setQuiz,
+	setCorrect,
+	
+	children,
+}) {
 	return (
 		<div className="quiz">
-			<div
-				className="quiz__progress-bar"
-				style={{ width: `${Math.round((count / length) * 100)}%` }}
-			></div>
+			{children}
 			<div className="quiz__title">{`${count + 1}) ${quiz.title}`}</div>
 			<ul className="quiz__list">
 				{quiz.variants.map((item, index) => (
