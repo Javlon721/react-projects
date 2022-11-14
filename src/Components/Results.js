@@ -4,7 +4,9 @@ export default function Results({ correct, length }) {
 	return (
 		<div className="results">
 			<h2 className="results__title">Your score {`${correct}/${length}`}</h2>
-			<a href="/" className="results__reload">Reload</a>
+			<a href="/react-project-quiz/index.html" className="results__reload">
+				Reload
+			</a>
 		</div>
 	);
 }
